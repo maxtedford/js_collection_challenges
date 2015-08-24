@@ -19,4 +19,12 @@ var sortedByName = sortedPairs.sort(function(a, b){
   return a[0] - b[0];
 });
 
-
+var sortedObj = {};
+data.forEach(function(pair){
+  if (sortedHash[pair[1]] === undefined){
+    sortedHash[pair[1]] = [];
+    sortedHash[pair[1]].push(pair[0])
+  } else {
+    sortedHash[pair[1]].push(pair[0])
+  }
+});
